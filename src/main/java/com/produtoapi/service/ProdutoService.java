@@ -43,4 +43,60 @@ public class ProdutoService {
     public List<Produto> salvarLista(List<Produto> produtos){
         return produtoRepository.saveAll(produtos);
     }
+
+    // ===========================================================================
+    // ==================== Busca avançadas por nome do produto ==================
+    // ===========================================================================
+
+    public List<Produto> FindByNome  (String nome){
+        return produtoRepository.findByNome(nome);
+    }
+
+    public List<Produto> FindByNomeContaining (String Nome){
+        return produtoRepository.findByNomeContaining(Nome);
+    }
+
+    public List<Produto> FindByNomeAndStatus (String Nome , String Status){
+        return produtoRepository.findByNomeAndStatus(Nome, Status);
+    }
+
+    public List<Produto> FindByNomeStartingWith (String Prefix){
+        return produtoRepository.findByNomeStartingWith(Prefix);
+    }
+
+    public List<Produto> FindByNomeEndingWith (String Suffix){
+        return produtoRepository.findByNomeEndingWith(Suffix);
+    }
+
+    public List<Produto> FindByPreco (Double Preco){
+        return produtoRepository.findByPreco(Preco);
+    }
+
+    public List<Produto> FindByPrecoGreaterThan (Double Preco){
+        return produtoRepository.findByPrecoGreaterThan(Preco);
+    }
+
+    public List<Produto> FindByPrecoLessThan (Double Preco){
+        return produtoRepository.findByPrecoLessThan(Preco);
+    }
+
+    public Double FindTotalPreco(){
+        return produtoRepository.findTotalPreco();
+    }
+
+    public List<Produto> FindByQuantidade (Integer quantidade){
+        return produtoRepository.findByQuantidade(quantidade);
+    }
+
+    public List<Produto> FindByQuantidadeLessThan (Integer quantidade){
+        return produtoRepository.findByQuantidadeLessThan(quantidade);
+    }
+
+    public List<Produto> FindByQuantidadeGreaterThan(Integer quantidade){
+        return produtoRepository.findByQuantidadeGreaterThan(quantidade);
+    }
+
+    public List<Produto> BuscarPorQuantidadeEPrecoMenorQue(Integer quantidade, Double preco){
+        return produtoRepository.buscarPorQuantidadeEPrecoMenorQue(quantidade, preco);
+    }
 }
